@@ -1,6 +1,8 @@
 import { PrismicPreview } from "@prismicio/next";
 import { repositoryName } from "@/prismicio";
 
+import "./app.css";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -8,7 +10,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className="">{children}</body>
       <PrismicPreview repositoryName={repositoryName} />
     </html>
   );
