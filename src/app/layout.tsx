@@ -20,9 +20,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${alpino.variable} antialiased`}>
-      <body>
+      <body className="overflow-x-hidden bg-yellow-300">
         <Header />
-        {children}
+        <main>{children}</main>
       </body>
       <PrismicPreview repositoryName={repositoryName} />
     </html>
