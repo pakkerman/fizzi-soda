@@ -1,0 +1,50 @@
+"use client";
+
+import { Float, Environment } from "@react-three/drei";
+import { forwardRef, ReactNode } from "react";
+
+import { SodaCan, SodaCanProps } from "@/components/SodaCan";
+import { Group } from "three";
+
+type FloatingCanProps = {
+  flavor?: SodaCanProps["flavor"];
+  floatSpeed?: number;
+  rotationIntensity?: number;
+  floatIntensity?: number;
+  floatRange?: [number, number];
+  children?: ReactNode;
+};
+
+const FloatingCan = forwardRef<Group, FloatingCanProps>(
+  (
+    {
+      flavor = "blackCherry",
+      floatSpeed = 1.5,
+      rotationIntensity = 1,
+      floatIntensity = 1,
+      floatRange = [-0.1, 0.1],
+      children,
+      ...props
+    },
+    ref,
+  ) => {
+    return (
+      <group ref={ref} {...props}>
+        <Float
+          speed={floatSpeed}
+          rotationIntensity={rotationIntensity}
+          floatIntensity={floatIntensity}
+          floatingRange={floatRange}
+        >
+          {children}
+          <SodaCan flavor={flavor} />
+          <Environment files="/hdr/lobby.hdr" environmentIntensity={1.5} />
+        </Float>
+      </group>
+    );
+  },
+);
+
+FloatingCan.displayName = "FloatingCan";
+
+export default FloatingCan;
