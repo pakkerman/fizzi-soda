@@ -63,11 +63,18 @@ export function Bubbles({
     };
   }, [count, minSpeed, maxSpeed]);
 
+  const accumulatorRef = useRef(0);
   // useFrame runs on every animation frame
-  useFrame(() => {
+  useFrame((_, delta) => {
     if (!meshRef.current) {
       return;
     }
+
+    const interval = 1 / 60;
+    accumulatorRef.current += delta;
+
+    if (accumulatorRef.current < interval) return;
+    accumulatorRef.current = 0;
 
     // Assign current body color to bubble so it looks natural
     material.color = new THREE.Color(document.body.style.backgroundColor);
