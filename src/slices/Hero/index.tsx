@@ -69,7 +69,7 @@ const Hero: FC<HeroProps> = ({ slice }) => {
           start: "top top",
           end: "bottom bottom",
           scrub: 1.5,
-          markers: true,
+          // markers: true,
         },
       });
 
@@ -138,7 +138,7 @@ const Hero: FC<HeroProps> = ({ slice }) => {
           </div>
         </div>
 
-        <div className="text-side relative z-[80] grid h-screen items-center gap-4 md:grid-cols-2 border-2 border-red-400">
+        <div className="text-side relative z-[80] grid h-screen items-center gap-4 md:grid-cols-2">
           <PrismicNextImage
             field={slice.primary.cans_image}
             className="w-full md:hidden"
