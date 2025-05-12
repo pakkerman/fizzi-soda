@@ -38,7 +38,6 @@ const FloatingCan = forwardRef<Group, FloatingCanProps>(
         >
           {children}
           <SodaCan flavor={flavor} />
-          <Environment files="/hdr/lobby.hdr" environmentIntensity={1.5} />
         </Float>
       </group>
     );
