@@ -2,7 +2,7 @@
 
 import { FC } from "react";
 import { asText, Content } from "@prismicio/client";
-import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
+import { PrismicText, SliceComponentProps } from "@prismicio/react";
 import clsx from "clsx";
 import { View } from "@react-three/drei";
 
@@ -51,10 +51,10 @@ const AlternatingText: FC<AlternatingTextProps> = ({ slice }) => {
                   )}
                 >
                   <h2 className="text-balance text-6xl font-bold">
-                    <PrismicRichText field={heading} />
+                    <PrismicText field={heading} />
                   </h2>
                   <div className="mt-6 text-xl">
-                    <PrismicRichText field={body} />
+                    <PrismicText field={body} />
                   </div>
                 </div>
               </div>
