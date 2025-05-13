@@ -15,7 +15,6 @@ import gsap from "gsap";
 
 import FloatingCan from "@/components/FloatingCan";
 import { ArrowIcon } from "./ArrowIcon";
-import { Bounded } from "@/components/Bounded";
 import { SodaCanProps } from "@/components/SodaCan";
 import { WavyCircles } from "./WavyCircles";
 
@@ -109,7 +108,7 @@ const Carousel: FC<CarouselProps> = ({ slice }) => {
   }
 
   return (
-    <Bounded
+    <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
       className="carousel relative grid h-screen grid-rows-[auto,4fr,auto] justify-center overflow-hidden bg-white py-12 text-white"
@@ -162,7 +161,7 @@ const Carousel: FC<CarouselProps> = ({ slice }) => {
           <PrismicRichText field={slice.primary.price_copy} />
         </div>
       </div>
-    </Bounded>
+    </section>
   );
 };
 
