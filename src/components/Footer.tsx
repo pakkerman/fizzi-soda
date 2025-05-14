@@ -1,9 +1,7 @@
 import CircleText from "./CircleText";
 import { FizziLogo } from "./FizziLogo";
 
-type Props = {};
-
-export default function Footer({}: Props) {
+export default function Footer() {
   return (
     <footer className="bg-[#FEE832] text-[#FE6334]">
       <div className="relative mx-auto flex w-full max-w-full justify-center px-4 py-10">
